@@ -1,4 +1,4 @@
-;; code from http://nbeloglazov.com/2014/05/29/quil-intro.html
+;; code from http://www.quil.info/
 
 (ns starter.quil
   (:require [quil.core :as q :include-macros true]
@@ -21,7 +21,7 @@
 
 (defn draw-state [state]
   ;; Clear the sketch by filling it with light-grey color.
-  (q/background 240)
+  (q/background (:color state))
   ;; Set circle color.
   (q/fill (:color state) 255 255)
   ;; Calculate x and y coordinates of the circle.
@@ -34,21 +34,6 @@
       ;; Draw the circle.
       (q/ellipse x y 100 100))))
 
-
-;; define function which draws spiral
-(defn draw-circle []
-  ;; make background white
-  (q/background 255)
-  
-  ;; move origin point to centre of the sketch
-  ;; by default origin is in the left top corner
-  (q/with-translation [(/ (q/width) 2) (/ (q/height) 2)]
-    ;; parameter t goes 0, 0.01, 0.02, ..., 99.99, 100
-    (doseq [t (map #(* 0.3 %) (range 0 200 0.01))]
-      ;; draw a point with x = t * sin(t) and y = t * cos(t)
-      (q/point (* t (q/sin t))
-               (* t (q/cos t))))))
-
 ;;;; this function is called in index.html
 (defn run-sketch []
   (q/defsketch cljs-quil
@@ -58,7 +43,7 @@
     :setup setup
     ;;;; update-state is called on each iteration before draw-state.
     :update update-state
-    :draw draw-circle
+    :draw draw-state
     ;;;; This sketch uses functional-mode middleware.
     ;;;; Check quil wiki for more info about middlewares and particularly
     ;;;; fun-mode.
