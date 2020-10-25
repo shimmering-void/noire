@@ -21,7 +21,7 @@
 
 (defn draw-state [state]
   ;; Clear the sketch by filling it with light-grey color.
-  (q/background (:color state))
+  (q/background 0)
   ;; Set circle color.
   (q/fill (:color state) 255 255)
   ;; Calculate x and y coordinates of the circle.
