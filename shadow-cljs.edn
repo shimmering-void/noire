@@ -1,19 +1,19 @@
 ;; shadow-cljs configuration
 {:source-paths
  ["src"]
-
+ 
  :dependencies
- []
-
+ [[quil "3.1.0"]]
+ 
  :builds
  {:app {:target :browser
         :output-dir "public/js"
         :asset-path "/js"
-
+        
         :modules
         {:main ;; <- becomes public/js/main.js
-         {:entries [starter.browser]}}
-
+         {:entries [starter.quil]}}
+        
         ;; start a development http server on http://localhost:8020
         :devtools
         {:http-root "public"
