@@ -1,3 +1,18 @@
 body {
   color: green;
+  margin: 0;
+
+  background: black;
+}
+
+#app {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+#app canvas {
+  image-rendering: pixelated;
+  width: 960px !important;
+  height: 960px !important;
 }
