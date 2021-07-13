@@ -2,6 +2,8 @@
 
 This is a minimum template you can use as the basis for quil projects.
 
+![image](https://user-images.githubusercontent.com/5009316/125375320-3495d400-e3cc-11eb-8162-ba812c1a70d7.png)
+
 ## Required Software
 
 - [node.js (v6.0.0+)](https://nodejs.org/en/download/)
