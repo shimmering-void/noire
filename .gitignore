@@ -9,3 +9,4 @@
 /.idea
 .calva
 .lsp
+.clj-kondo
